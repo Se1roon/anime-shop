@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar component checks whether everything renders correctly 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    <div
+      class="container"
+    >
+      <img
+        alt="Logo"
+        class="logo"
+        data-nimg="1"
+        decoding="async"
+        height="64"
+        loading="lazy"
+        src="/_next/image?url=%2F..%2Fpublic%2Fimages%2Flogo.png&w=128&q=75"
+        srcset="/_next/image?url=%2F..%2Fpublic%2Fimages%2Flogo.png&w=64&q=75 1x, /_next/image?url=%2F..%2Fpublic%2Fimages%2Flogo.png&w=128&q=75 2x"
+        style="color: transparent;"
+        width="64"
+      />
+      <div
+        class="menu"
+      >
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+    <nav
+      class="nav"
+    >
+      <ul
+        class="links"
+      >
+        <li>
+          <a
+            href="/hoodies"
+          >
+            Hoodies
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shirts"
+          >
+            Shirts
+          </a>
+        </li>
+        <li>
+          <a
+            href="/pants"
+          >
+            Pants
+          </a>
+        </li>
+      </ul>
+      <a
+        class="cta"
+        href="/contact"
+      >
+        <button
+          class="btn"
+        >
+          Contact
+        </button>
+      </a>
+    </nav>
+  </header>
+</div>
+`;
