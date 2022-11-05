@@ -16,7 +16,7 @@
   align-items: center;
   position: sticky;
   top: 0;
-  box-shadow: 0 0 2rem 4px hsl(300 100% 50%);
+  box-shadow: 0 0 2rem 4px var(--clr-accent);
 }
 
 .logo {
@@ -47,12 +47,12 @@
 
 .links li a:hover,
 .links li a:focus {
-  color: hsl(300 100% 50%);
+  color: var(--clr-accent);
 }
 
 .btn {
   cursor: pointer;
-  background: hsl(300 100% 50%);
+  background: var(--clr-accent);
   padding: 0.8rem 1.8rem;
   border: 0;
   border-radius: 2em;
@@ -61,7 +61,7 @@
 
 .btn:hover,
 .btn:focus {
-  box-shadow: 0 0 10px 2px hsl(300 100% 50%);
+  box-shadow: 0 0 10px 2px var(--clr-accent);
 }
 
 .menu {

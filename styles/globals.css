@@ -1,11 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
+:root {
+  --bg-light: hsl(0 0 100%);
+  --bg-dark: hsl(0 0% 10%);
+  --clr-accent: hsl(300 100% 50%);
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
 }
 
 a {
@@ -17,12 +27,8 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+@media (min-width: 1100px) {
   body {
-    color: white;
-    background: black;
+    background-color: var(--bg-light);
   }
 }
