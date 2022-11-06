@@ -1,8 +1,16 @@
 .section {
-  position: relative;
-  padding-inline: 2.5rem;
-  height: 450px;
   width: min(90%, 1000px);
-  display: flex;
+  height: 450px;
+  padding-inline: 2.5rem;
+  margin-inline: auto;
+  display: none;
   align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+@media (min-width: 1100px) {
+  .section {
+    display: flex;
+  }
 }
