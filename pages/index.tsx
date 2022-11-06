@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../components/navbar";
 import styles from "../styles/Home.module.css";
-import Showcase from "./../components/showcase";
+import Showcase from "../components/showcase";
 import PocketBase from "pocketbase";
 import Record from "pocketbase";
 import { json } from "stream/consumers";

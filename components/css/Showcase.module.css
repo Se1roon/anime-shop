@@ -1,0 +1,8 @@
+.section {
+  position: relative;
+  padding-inline: 2.5rem;
+  height: 450px;
+  width: min(90%, 1000px);
+  display: flex;
+  align-items: center;
+}
