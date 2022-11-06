@@ -1,5 +1,4 @@
 import React from "react";
-import Record from "pocketbase";
 import Card from "./card";
 import styles from "./css/Showcase.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Pagination, Navigation } from "swiper";
+import { Navigation } from "swiper";
 
 interface ShowcaseProps {
   records: {
@@ -35,7 +34,7 @@ const Showcase: React.FC<ShowcaseProps> = ({ records }): JSX.Element => {
             clickable: true,
           }}
           navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Navigation]}
           className="mySwiper"
         >
           {records.map((record) => (
