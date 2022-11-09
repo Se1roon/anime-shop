@@ -14,3 +14,140 @@
     display: flex;
   }
 }
+
+.grid {
+  width: 80%;
+  margin-block: 3rem;
+  margin-inline: auto;
+  display: grid;
+  grid-template-areas:
+    "item1 item2"
+    "item1 item2"
+    "item3 item4"
+    "item5 item6";
+  gap: 1.5rem;
+}
+
+.item {
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  padding: 1rem 2rem;
+  background-color: #111;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 2px #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.item:hover,
+.item:focus {
+  box-shadow: 0 0 8px 2px var(--clr-accent);
+}
+
+.grid .item:first-child {
+  grid-area: item1;
+}
+
+.grid .item:nth-child(2) {
+  grid-area: item2;
+}
+
+.grid .item:nth-child(3) {
+  grid-area: item3;
+}
+
+.grid .item:nth-child(4) {
+  grid-area: item4;
+}
+
+.grid .item:nth-child(5) {
+  grid-area: item5;
+}
+
+.grid .item:last-child {
+  grid-area: item6;
+}
+
+.item .img {
+  object-fit: cover;
+  border-radius: 4rem;
+}
+
+.namePrice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.namePrice h2 {
+  font-size: 1.4rem;
+}
+
+.rating {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.rating i {
+  font-size: 18px;
+  color: #7d2ae8;
+  margin: 0 2px;
+}
+
+.button {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button button {
+  --hover: hsl(300 30% 50%);
+
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background-color: var(--clr-accent);
+  padding: 8px 22px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.button button:hover {
+  background-color: var(--hover);
+}
+
+@media (min-width: 1100px) {
+  .grid {
+    display: none;
+  }
+}
+
+@media (max-width: 670px) {
+  .grid {
+    grid-template-areas:
+      "item1"
+      "item2"
+      "item3"
+      "item4"
+      "item5"
+      "item6";
+  }
+
+  .namePrice h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .namePrice h2 {
+    font-size: 0.9rem;
+  }
+}
