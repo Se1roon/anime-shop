@@ -17,7 +17,7 @@ const Home: React.FC<HomeProps> = ({ bestsellers }): JSX.Element => {
   return (
     <>
       <Navbar />
-      <Showcase records={bestsellers} />
+      <Showcase records={bestsellers} headerText="🔥 Bestsellers 🔥" />
     </>
   );
 };

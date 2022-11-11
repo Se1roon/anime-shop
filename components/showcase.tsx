@@ -22,9 +22,13 @@ interface ShowcaseProps {
     rating: number;
     sizes: string;
   }[];
+  headerText: string;
 }
 
-const Showcase: React.FC<ShowcaseProps> = ({ records }): JSX.Element => {
+const Showcase: React.FC<ShowcaseProps> = ({
+  records,
+  headerText,
+}): JSX.Element => {
   const getRating = (record): JSX.Element => {
     const fullStars = Math.floor(record.rating);
     const stars = new Array(fullStars).fill(0);
@@ -45,7 +49,8 @@ const Showcase: React.FC<ShowcaseProps> = ({ records }): JSX.Element => {
   };
 
   return (
-    <>
+    <div className={styles.showcase}>
+      <h2 className={styles.headerText}>{headerText}</h2>
       <section className={styles.section}>
         <Swiper
           slidesPerView={3}
@@ -93,7 +98,7 @@ const Showcase: React.FC<ShowcaseProps> = ({ records }): JSX.Element => {
           );
         })}
       </section>
-    </>
+    </div>
   );
 };
 

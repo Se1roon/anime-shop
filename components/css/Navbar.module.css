@@ -10,6 +10,7 @@
 
 .header {
   background-color: #fff;
+  width: 100%;
   padding: 1rem 3rem;
   box-shadow: 0 0 2rem 4px var(--clr-accent);
   display: flex;

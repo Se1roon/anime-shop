@@ -1,3 +1,9 @@
+.showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .section {
   width: min(90%, 1000px);
   height: 450px;
@@ -26,6 +32,15 @@
     "item3 item4"
     "item5 item6";
   gap: 1.5rem;
+}
+
+.headerText {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 4rem;
 }
 
 .item {
@@ -128,6 +143,10 @@
   .grid {
     display: none;
   }
+
+  .headerText {
+    color: var(--bg-dark);
+  }
 }
 
 @media (max-width: 670px) {
@@ -149,5 +168,11 @@
 @media (max-width: 320px) {
   .namePrice h2 {
     font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .headerText {
+    font-size: 2rem;
   }
 }
