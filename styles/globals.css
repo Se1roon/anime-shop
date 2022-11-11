@@ -39,13 +39,6 @@ a {
   box-sizing: border-box;
 }
 
-#__next {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 .swiper {
   width: 950px;
 }

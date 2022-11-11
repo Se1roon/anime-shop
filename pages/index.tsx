@@ -1,4 +1,6 @@
+import Head from "next/head";
 import Footer from "../components/footer";
+import Layout from "../components/layout";
 import Navbar from "../components/navbar";
 import Showcase from "../components/showcase";
 
@@ -16,11 +18,14 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ bestsellers }): JSX.Element => {
   return (
-    <>
+    <Layout>
+      <Head>
+        <title>ZA WORUDO</title>
+      </Head>
       <Navbar />
       <Showcase records={bestsellers} headerText="🔥 Bestsellers 🔥" />
       <Footer />
-    </>
+    </Layout>
   );
 };
 
