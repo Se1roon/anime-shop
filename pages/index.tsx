@@ -22,7 +22,6 @@ const Home: React.FC<HomeProps> = ({ bestsellers }): JSX.Element => {
       <Head>
         <title>ZA WORUDO</title>
       </Head>
-      <Navbar />
       <Showcase records={bestsellers} headerText="🔥 Bestsellers 🔥" />
       <Footer />
     </Layout>
