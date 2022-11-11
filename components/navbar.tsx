@@ -13,13 +13,15 @@ const Navbar: React.FC = (): JSX.Element => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Image
-          className={styles.logo}
-          src="/../public/images/logo.png"
-          width={64}
-          height={64}
-          alt="Logo"
-        />
+        <Link href="/">
+          <Image
+            className={styles.logo}
+            src="/../public/images/logo.png"
+            width={64}
+            height={64}
+            alt="Logo"
+          />
+        </Link>
         <div className={styles.menu} onClick={handleMenuExpand}>
           <div></div>
           <div></div>
