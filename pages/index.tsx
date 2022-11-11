@@ -1,3 +1,4 @@
+import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import Showcase from "../components/showcase";
 
@@ -18,6 +19,7 @@ const Home: React.FC<HomeProps> = ({ bestsellers }): JSX.Element => {
     <>
       <Navbar />
       <Showcase records={bestsellers} headerText="🔥 Bestsellers 🔥" />
+      <Footer />
     </>
   );
 };
