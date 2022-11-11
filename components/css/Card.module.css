@@ -1,5 +1,6 @@
 .image {
   --bg: #7d2ae8;
+  --font-light-dark: #333;
 
   background-color: var(--bg);
   height: 140px;
@@ -12,13 +13,13 @@
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  border: 2px solid #fff;
+  border: 2px solid var(--bg-light);
   border-radius: 50%;
 }
 
 .card {
   font-family: "Poppins", sans-serif;
-  background-color: #fff;
+  background-color: var(--bg-light);
   border-radius: 20px;
   margin: 20px 0;
   box-shadow: 0 0 6px 2px var(--clr-accent);
@@ -42,21 +43,21 @@
   position: relative;
 }
 
-.name_profession {
-  color: #333;
+.namePrice {
+  color: var(--font-light-dark);
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.name_profession .name {
+.namePrice .name {
   font-size: 18px;
   font-weight: 600;
   text-align: center;
 }
 
-.name_profession .profession {
+.namePrice .price {
   font-size: 15px;
 }
 
@@ -64,12 +65,6 @@
   margin-top: 18px;
   display: flex;
   align-items: center;
-}
-
-.rating i {
-  font-size: 18px;
-  color: #7d2ae8;
-  margin: 0 2px;
 }
 
 .button {
@@ -85,7 +80,7 @@
   cursor: pointer;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  color: #fff;
+  color: var(--bg-light);
   background-color: var(--clr-accent);
   padding: 8px 22px;
   outline: none;

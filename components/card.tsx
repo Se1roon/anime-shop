@@ -28,9 +28,9 @@ const Card: React.FC<CardProps> = ({ record, getRating }): JSX.Element => {
           />
         </div>
 
-        <div className={styles.name_profession}>
+        <div className={styles.namePrice}>
           <span className={styles.name}>{record.name}</span>
-          <span className={styles.profession}>{`${record.price} zł`}</span>
+          <span className={styles.price}>{`${record.price} zł`}</span>
         </div>
 
         <div className={styles.rating}>
@@ -38,8 +38,8 @@ const Card: React.FC<CardProps> = ({ record, getRating }): JSX.Element => {
         </div>
 
         <div className={styles.button}>
-          <button className={styles.aboutMe}>Show</button>
-          <button className={styles.hireMe}>Buy</button>
+          <button className={styles.show}>Show</button>
+          <button className={styles.buy}>Buy</button>
         </div>
       </div>
     </div>

@@ -4,12 +4,14 @@
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  color: #000;
+  color: var(--clr-dark);
   text-decoration: none;
 }
 
 .header {
-  background-color: #fff;
+  --clr-dark: #000;
+
+  background-color: var(--bg-light);
   width: 100%;
   padding: 1rem 3rem;
   box-shadow: 0 0 2rem 4px var(--clr-accent);
@@ -105,7 +107,7 @@
   }
 
   .nav.visible {
-    background-color: #fff;
+    background-color: var(--bg-light);
     width: 100%;
     max-height: 100%;
     aspect-ratio: 1;
@@ -122,7 +124,7 @@
   }
 
   .menu > * {
-    background-color: #000;
+    background-color: var(--clr-dark);
     width: 2rem;
     height: 2px;
     margin-block: 8px;

@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
 
 :root {
-  --bg-light: hsl(0 0 100%);
+  --bg-light: hsl(0 0% 100%);
   --bg-dark: hsl(0 0% 10%);
   --clr-accent: hsl(300 100% 50%);
 }
