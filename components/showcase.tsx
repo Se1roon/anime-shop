@@ -12,6 +12,7 @@ import { Navigation } from "swiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
+import getRating from "../utils/getRating";
 
 interface ShowcaseProps {
   records: {
@@ -29,25 +30,6 @@ const Showcase: React.FC<ShowcaseProps> = ({
   records,
   headerText,
 }): JSX.Element => {
-  const getRating = (record): JSX.Element => {
-    const fullStars = Math.floor(record.rating);
-    const stars = new Array(fullStars).fill(0);
-
-    if (record.rating > fullStars) stars.push(1);
-
-    return (
-      <>
-        {stars.map((star, index) => {
-          return star ? (
-            <FontAwesomeIcon key={index} icon={faStarHalf as IconProp} />
-          ) : (
-            <FontAwesomeIcon key={index} icon={faStar as IconProp} />
-          );
-        })}
-      </>
-    );
-  };
-
   return (
     <div className={styles.showcase}>
       <h2 className={styles.headerText}>{headerText}</h2>
