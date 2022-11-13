@@ -23,7 +23,6 @@ const Home: React.FC<HomeProps> = ({ bestsellers }): JSX.Element => {
         <title>ZA WORUDO</title>
       </Head>
       <Showcase records={bestsellers} headerText="🔥 Bestsellers 🔥" />
-      <Footer />
     </Layout>
   );
 };
