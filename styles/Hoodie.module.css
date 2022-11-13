@@ -44,7 +44,7 @@
   cursor: pointer;
   width: 4rem;
   aspect-ratio: 1;
-  border: 1px solid var(--bg-light);
+  border: 2px solid var(--bg-light);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -112,4 +112,33 @@
 .buy:focus {
   background-color: var(--clr-accent);
   box-shadow: 0 0 1rem 1px var(--clr-accent);
+}
+
+@media (min-width: 870px) {
+  .section {
+    margin-top: 15rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1100px) {
+  .section {
+    margin-inline: 10%;
+  }
+
+  .content,
+  .buy {
+    color: var(--bg-dark);
+  }
+
+  .sizes > div {
+    border-color: var(--bg-dark);
+  }
+}
+
+@media (min-width: 1300px) {
+  .section {
+    margin-inline: 20%;
+  }
 }
