@@ -1,0 +1,13 @@
+.section {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 1000px) {
+  .section {
+    flex-direction: row;
+    padding-inline: 1rem;
+  }
+}

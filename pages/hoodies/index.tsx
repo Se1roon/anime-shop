@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import Layout from "./../../components/layout";
-import Grid from "../../components/grid";
+import Clothes from "../../components/clothes";
 
 interface HomeProps {
   records: {
@@ -23,7 +23,7 @@ const Home: React.FC<HomeProps> = ({ records }): JSX.Element => {
       <Head>
         <title>Hoodies</title>
       </Head>
-      <Grid records={records} />
+      <Clothes records={records} />
     </Layout>
   );
 };
