@@ -38,6 +38,8 @@
     margin-top: 6rem;
     padding-inline: 4rem;
     align-self: flex-start;
+    position: sticky;
+    top: 20%;
   }
 }
 
