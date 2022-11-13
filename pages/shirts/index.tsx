@@ -19,7 +19,7 @@ const Home: React.FC<HomeProps> = ({ records }): JSX.Element => {
   return (
     <Layout>
       <Head>
-        <title>Hoodies</title>
+        <title>Shirts</title>
       </Head>
       <Clothes records={records} />
     </Layout>
@@ -28,7 +28,7 @@ const Home: React.FC<HomeProps> = ({ records }): JSX.Element => {
 
 export async function getStaticProps() {
   const res = await fetch(
-    `http://127.0.0.1:8090/api/collections/hoodies/records?page=1&perPage=30`
+    `http://127.0.0.1:8090/api/collections/shirts/records?page=1&perPage=30`
   );
 
   let data = await res.json();
