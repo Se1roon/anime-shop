@@ -21,7 +21,7 @@ const Home: React.FC<HomeProps> = ({ records }): JSX.Element => {
       <Head>
         <title>Shirts</title>
       </Head>
-      <Clothes records={records} />
+      <Clothes records={records} linkTo="shirts" />
     </Layout>
   );
 };

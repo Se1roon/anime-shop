@@ -13,9 +13,10 @@ interface ClothesProps {
     sizes: string;
     bestseller: boolean;
   }[];
+  linkTo: string;
 }
 
-const Clothes: React.FC<ClothesProps> = ({ records }): JSX.Element => {
+const Clothes: React.FC<ClothesProps> = ({ records, linkTo }): JSX.Element => {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(299.99);
 
@@ -43,7 +44,7 @@ const Clothes: React.FC<ClothesProps> = ({ records }): JSX.Element => {
         setMinPrice={updateMinPrice}
         setMaxPrice={updateMaxPrice}
       />
-      <Grid records={filterRecords()} />
+      <Grid records={filterRecords()} linkTo={linkTo} />
     </section>
   );
 };

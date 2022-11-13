@@ -14,16 +14,17 @@ interface GridProps {
     sizes: string;
     bestseller: boolean;
   }[];
+  linkTo: string;
 }
 
-const Grid: React.FC<GridProps> = ({ records }): JSX.Element => {
+const Grid: React.FC<GridProps> = ({ records, linkTo }): JSX.Element => {
   return (
     <section className={styles.grid}>
       {records.map((record) => {
         return (
           <Link
             key={record.id}
-            href={`/hoodies/${record.id}`}
+            href={`/${linkTo}/${record.id}`}
             className={styles.link}
           >
             <div className={styles.item}>

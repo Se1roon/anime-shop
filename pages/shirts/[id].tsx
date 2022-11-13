@@ -77,7 +77,7 @@ const Hoodie: React.FC<HoodieProps> = ({ item }): JSX.Element => {
 
 export async function getStaticPaths() {
   const res = await fetch(
-    `http://127.0.0.1:8090/api/collections/hoodies/records?page=1&perPage=30`
+    `http://127.0.0.1:8090/api/collections/shirts/records?page=1&perPage=30`
   );
 
   let data = await res.json();
@@ -97,7 +97,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const res = await fetch(
-    `http://127.0.0.1:8090/api/collections/hoodies/records/${params.id}`
+    `http://127.0.0.1:8090/api/collections/shirts/records/${params.id}`
   );
 
   let data = await res.json();
