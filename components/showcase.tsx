@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
 import getRating from "../utils/getRating";
+import Link from "next/link";
 
 interface ShowcaseProps {
   records: {
@@ -79,7 +80,9 @@ const Showcase: React.FC<ShowcaseProps> = ({
                 {item.rating ? getRating(item) : null}
               </div>
               <div className={styles.button}>
-                <button className={styles.aboutMe}>Show</button>
+                <Link href={`/${collection}/${item.id}`}>
+                  <button className={styles.aboutMe}>Show</button>
+                </Link>
                 <button className={styles.hireMe}>Buy</button>
               </div>
             </div>
