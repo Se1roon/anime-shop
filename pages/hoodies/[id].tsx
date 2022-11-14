@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../../components/layout";
 import styles from "/styles/Cloth.module.css";
 import Image from "next/image";
 import getRating from "../../utils/getRating";
 import Head from "next/head";
-
+import { Sizes } from "../../interfaces/Sizes";
 interface HoodieProps {
   item: {
     id: string;
@@ -15,9 +15,10 @@ interface HoodieProps {
     sizes: string;
     bestseller: boolean;
   };
+  sizes: Sizes;
 }
 
-const Hoodie: React.FC<HoodieProps> = ({ item }): JSX.Element => {
+const Hoodie: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
   const sizeSelect = (e) => {
     const target = e.target;
 
@@ -47,23 +48,23 @@ const Hoodie: React.FC<HoodieProps> = ({ item }): JSX.Element => {
           <div className={styles.sizes}>
             <div className={styles.xs} onClick={sizeSelect}>
               <h4>XS</h4>
-              <p>10</p>
+              <p>{sizes.xs}</p>
             </div>
             <div className={styles.s} onClick={sizeSelect}>
               <h4>S</h4>
-              <p>10</p>
+              <p>{sizes.s}</p>
             </div>
             <div className={styles.m} onClick={sizeSelect}>
               <h4>M</h4>
-              <p>10</p>
+              <p>{sizes.m}</p>
             </div>
             <div className={styles.l} onClick={sizeSelect}>
               <h4>L</h4>
-              <p>10</p>
+              <p>{sizes.l}</p>
             </div>
             <div className={styles.xl} onClick={sizeSelect}>
               <h4>XL</h4>
-              <p>10</p>
+              <p>{sizes.xl}</p>
             </div>
           </div>
           <div className={styles.button}>
@@ -96,15 +97,22 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const res = await fetch(
+  const resHoodie = await fetch(
     `http://127.0.0.1:8090/api/collections/hoodies/records/${params.id}`
   );
 
-  let data = await res.json();
+  let hoodie = await resHoodie.json();
+
+  const resSizes = await fetch(
+    `http://127.0.0.1:8090/api/collections/hoodies_sizes/records/${hoodie.sizes}`
+  );
+
+  let sizes = await resSizes.json();
 
   return {
     props: {
-      item: data,
+      item: hoodie,
+      sizes,
     },
   };
 }
