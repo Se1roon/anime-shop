@@ -115,7 +115,7 @@
 }
 
 .button button {
-  --hover: hsl(300 30% 50%);
+  --hover: hsl(100 10% 50%);
 
   cursor: pointer;
   font-family: "Poppins", sans-serif;
@@ -136,10 +136,6 @@
 @media (min-width: 1100px) {
   .grid {
     display: none;
-  }
-
-  .headerText {
-    color: var(--bg-dark);
   }
 }
 

@@ -47,9 +47,4 @@
   .section {
     padding-left: 0;
   }
-
-  .section,
-  .item input {
-    color: var(--bg-dark);
-  }
 }

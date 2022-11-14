@@ -4,7 +4,7 @@
 :root {
   --bg-light: hsl(0 0% 100%);
   --bg-dark: hsl(0 0% 10%);
-  --clr-accent: hsl(300 100% 50%);
+  --clr-accent: hsl(100 60% 50%);
 }
 
 *,
@@ -64,10 +64,4 @@ a {
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   opacity: 1;
-}
-
-@media (min-width: 1100px) {
-  body {
-    background-color: var(--bg-light);
-  }
 }

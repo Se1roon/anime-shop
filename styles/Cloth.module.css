@@ -126,15 +126,6 @@
   .section {
     margin-inline: 10%;
   }
-
-  .content,
-  .buy {
-    color: var(--bg-dark);
-  }
-
-  .sizes > div {
-    border-color: var(--bg-dark);
-  }
 }
 
 @media (min-width: 1300px) {
