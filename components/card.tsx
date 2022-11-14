@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./css/Card.module.css";
+import Link from "next/link";
 
 interface CardProps {
   record: {
@@ -12,9 +13,14 @@ interface CardProps {
     sizes: string;
   };
   getRating: (record: any) => JSX.Element;
+  collection: string;
 }
 
-const Card: React.FC<CardProps> = ({ record, getRating }): JSX.Element => {
+const Card: React.FC<CardProps> = ({
+  record,
+  getRating,
+  collection,
+}): JSX.Element => {
   return (
     <div className={styles.card}>
       <div className={styles.card_content}>
@@ -38,7 +44,9 @@ const Card: React.FC<CardProps> = ({ record, getRating }): JSX.Element => {
         </div>
 
         <div className={styles.button}>
-          <button className={styles.show}>Show</button>
+          <Link href={`/${collection}/${record.id}`}>
+            <button className={styles.show}>Show</button>
+          </Link>
           <button className={styles.buy}>Buy</button>
         </div>
       </div>

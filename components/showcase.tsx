@@ -24,10 +24,12 @@ interface ShowcaseProps {
     sizes: string;
   }[];
   headerText: string;
+  collection: string;
 }
 
 const Showcase: React.FC<ShowcaseProps> = ({
   records,
+  collection,
   headerText,
 }): JSX.Element => {
   return (
@@ -49,7 +51,11 @@ const Showcase: React.FC<ShowcaseProps> = ({
         >
           {records.map((record) => (
             <SwiperSlide key={record.id}>
-              <Card record={record} getRating={getRating} />
+              <Card
+                record={record}
+                getRating={getRating}
+                collection={collection}
+              />
             </SwiperSlide>
           ))}
         </Swiper>

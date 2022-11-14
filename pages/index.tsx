@@ -14,15 +14,23 @@ interface HomeProps {
     sizes: string;
     bestseller: boolean;
   }[];
+  collection: string;
 }
 
-const Home: React.FC<HomeProps> = ({ bestsellers }): JSX.Element => {
+const Home: React.FC<HomeProps> = ({
+  bestsellers,
+  collection,
+}): JSX.Element => {
   return (
     <Layout>
       <Head>
         <title>ZA WORUDO</title>
       </Head>
-      <Showcase records={bestsellers} headerText="🔥 Bestsellers 🔥" />
+      <Showcase
+        records={bestsellers}
+        collection={collection}
+        headerText="🔥 Bestsellers 🔥"
+      />
     </Layout>
   );
 };
@@ -43,6 +51,7 @@ export async function getStaticProps() {
   return {
     props: {
       bestsellers,
+      collection: types[typeIndex],
     },
   };
 }
