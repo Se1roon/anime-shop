@@ -10,8 +10,8 @@ const Footer: React.FC = (): JSX.Element => {
     <footer className={styles.footer}>
       <p>Copyright 2022 &copy; Se1roon</p>
       <div>
-        <Link href="https://github.com/Se1roon" target="_blank">
-          <FontAwesomeIcon icon={faGithub} />
+        <Link href="https://github.com/Se1roon/anime-shop" target="_blank">
+          <FontAwesomeIcon icon={faGithub} className={styles.icon} />
         </Link>
       </div>
     </footer>
