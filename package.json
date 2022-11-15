@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "buildF": "npm run pocketbase & next build",
+    "pocketbase": "./pocketbase.exe serve",
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch"
