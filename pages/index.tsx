@@ -3,7 +3,6 @@ import Footer from "../components/footer";
 import Layout from "../components/layout";
 import Navbar from "../components/navbar";
 import Showcase from "../components/showcase";
-
 interface HomeProps {
   bestsellers: {
     id: string;

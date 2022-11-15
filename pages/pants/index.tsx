@@ -2,18 +2,7 @@ import Head from "next/head";
 import React from "react";
 import Layout from "./../../components/layout";
 import Clothes from "../../components/clothes";
-
-interface HomeProps {
-  records: {
-    id: string;
-    name: string;
-    path_to_image: string;
-    price: number;
-    rating: number;
-    sizes: string;
-    bestseller: boolean;
-  }[];
-}
+import { HomeProps } from "../../interfaces/HomeProps";
 
 const Home: React.FC<HomeProps> = ({ records }): JSX.Element => {
   return (
