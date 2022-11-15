@@ -5,6 +5,7 @@ import Image from "next/image";
 import getRating from "../../utils/getRating";
 import Head from "next/head";
 import { Sizes } from "../../interfaces/Sizes";
+import pocketbaseEs from "pocketbase";
 interface HoodieProps {
   item: {
     id: string;
@@ -77,14 +78,12 @@ const Hoodie: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
 };
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    `http://127.0.0.1:8090/api/collections/hoodies/records?page=1&perPage=30`
-  );
+  const client = new pocketbaseEs("http://127.0.0.1:8090");
+  const res = await client.records.getFullList("hoodies");
 
-  let data = await res.json();
-  data = data?.items as any[];
+  const records = JSON.parse(JSON.stringify(res));
 
-  const paths = data.map((entry) => ({
+  const paths = records.map((entry) => ({
     params: {
       id: entry.id,
     },
@@ -97,17 +96,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const resHoodie = await fetch(
-    `http://127.0.0.1:8090/api/collections/hoodies/records/${params.id}`
-  );
+  const client = new pocketbaseEs("http://127.0.0.1:8090");
 
-  let hoodie = await resHoodie.json();
+  const resHoodie = await client.records.getOne("hoodies", params.id);
 
-  const resSizes = await fetch(
-    `http://127.0.0.1:8090/api/collections/hoodies_sizes/records/${hoodie.sizes}`
-  );
+  const hoodie = JSON.parse(JSON.stringify(resHoodie));
 
-  let sizes = await resSizes.json();
+  const resSizes = await client.records.getOne("hoodies_sizes", hoodie.sizes);
+
+  const sizes = JSON.parse(JSON.stringify(resSizes));
 
   return {
     props: {

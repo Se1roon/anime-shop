@@ -3,6 +3,7 @@ import Footer from "../components/footer";
 import Layout from "../components/layout";
 import Navbar from "../components/navbar";
 import Showcase from "../components/showcase";
+import pocketbaseEs from "pocketbase";
 interface HomeProps {
   bestsellers: {
     id: string;
@@ -38,14 +39,13 @@ export async function getStaticProps() {
   const types = ["hoodies", "shirts", "pants"];
   const typeIndex = Math.floor(Math.random() * types.length);
 
-  const res = await fetch(
-    `http://127.0.0.1:8090/api/collections/${types[typeIndex]}/records?page=1&perPage=30`
-  );
+  const client = new pocketbaseEs("http://127.0.0.1:8090");
 
-  let data = await res.json();
-  data = data?.items as any[];
+  const res = await client.records.getFullList(`${types[typeIndex]}`);
 
-  const bestsellers = data.filter((entry) => entry.bestseller);
+  let bestsellers = res.filter((entry) => entry.bestseller);
+
+  bestsellers = JSON.parse(JSON.stringify(bestsellers));
 
   return {
     props: {

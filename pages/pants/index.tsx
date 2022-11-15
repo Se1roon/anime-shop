@@ -3,6 +3,7 @@ import React from "react";
 import Layout from "./../../components/layout";
 import Clothes from "../../components/clothes";
 import { HomeProps } from "../../interfaces/HomeProps";
+import pocketbaseEs from "pocketbase";
 
 const Home: React.FC<HomeProps> = ({ records }): JSX.Element => {
   return (
@@ -16,16 +17,15 @@ const Home: React.FC<HomeProps> = ({ records }): JSX.Element => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(
-    `http://127.0.0.1:8090/api/collections/pants/records?page=1&perPage=30`
-  );
+  const client = new pocketbaseEs("http://127.0.0.1:8090");
 
-  let data = await res.json();
-  data = data?.items as any[];
+  const res = await client.records.getFullList("pants");
+
+  const records = JSON.parse(JSON.stringify(res));
 
   return {
     props: {
-      records: data,
+      records,
     },
   };
 }
