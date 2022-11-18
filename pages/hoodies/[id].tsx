@@ -36,7 +36,7 @@ const Hoodie: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
       <section className={styles.section}>
         <div className={styles.imgContainer}>
           <Image
-            src={`${item.path_to_image}.webp`}
+            src={`${item.path_to_image}`}
             width={550}
             height={550}
             alt="Hoodie image"

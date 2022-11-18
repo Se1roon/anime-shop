@@ -29,7 +29,7 @@ const Grid: React.FC<GridProps> = ({ records, linkTo }): JSX.Element => {
           >
             <div className={styles.item}>
               <Image
-                src={`${record.path_to_image}.webp`}
+                src={`${record.path_to_image}`}
                 width={180}
                 height={200}
                 alt="cc"

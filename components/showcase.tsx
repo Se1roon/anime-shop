@@ -66,7 +66,7 @@ const Showcase: React.FC<ShowcaseProps> = ({
           return (
             <div key={item.id} className={styles.item}>
               <Image
-                src={`${item.path_to_image}.webp`}
+                src={`${item.path_to_image}`}
                 width={200}
                 height={200}
                 alt="Bestseller"

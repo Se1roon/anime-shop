@@ -26,7 +26,7 @@ const Card: React.FC<CardProps> = ({
       <div className={styles.card_content}>
         <div className={styles.image}>
           <Image
-            src={`${record.path_to_image}.webp`}
+            src={`${record.path_to_image}`}
             width={140}
             height={135}
             alt="A hoodie"
