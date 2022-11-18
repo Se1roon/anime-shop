@@ -1,4 +1,4 @@
-import { collection, addDoc, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { database } from "../firebaseConfig";
 import { Hoodie, Shirt } from "../interfaces/ClothesInterfaces";
 import { ItemData } from "../interfaces/ItemData";

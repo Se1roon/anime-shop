@@ -1,11 +1,11 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDoc, getDocs } from "firebase/firestore";
 import { database } from "../firebaseConfig";
 import { Hoodie } from "../interfaces/ClothesInterfaces";
 import { ItemData } from "../interfaces/ItemData";
 
 const dbInstance = collection(database, "hoodies");
 
-export default async function getHoodies(): Promise<Hoodie[]> {
+export default async function getHoodie(id: string): Promise<Hoodie> {
   const req = await getDocs(dbInstance);
 
   const hoodies: Hoodie[] = req.docs.map((item) => ({
@@ -13,5 +13,7 @@ export default async function getHoodies(): Promise<Hoodie[]> {
     id: item.id,
   }));
 
-  return hoodies;
+  const hoodie = hoodies.filter((hoodie) => hoodie.id === id)[0];
+
+  return hoodie;
 }
