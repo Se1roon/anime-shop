@@ -6,6 +6,8 @@ import getRating from "../../utils/getRating";
 import Head from "next/head";
 import { Sizes } from "../../interfaces/Sizes";
 import pocketbaseEs from "pocketbase";
+import getPaths from "../../utils/getPaths";
+import getSinglePants from "../../utils/getSinglePants";
 
 interface HoodieProps {
   item: {
@@ -79,14 +81,11 @@ const Hoodie: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
 };
 
 export async function getStaticPaths() {
-  const client = new pocketbaseEs("http://127.0.0.1:8090");
-  const res = await client.records.getFullList("pants");
+  const ids = await getPaths("pants");
 
-  const records = JSON.parse(JSON.stringify(res));
-
-  const paths = records.map((entry) => ({
+  const paths = ids.map((id) => ({
     params: {
-      id: entry.id,
+      id,
     },
   }));
 
@@ -97,20 +96,12 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const client = new pocketbaseEs("http://127.0.0.1:8090");
-
-  const resPants = await client.records.getOne("pants", params.id);
-
-  const pant = JSON.parse(JSON.stringify(resPants));
-
-  const resSizes = await client.records.getOne("pants_sizes", pant.sizes);
-
-  const sizes = JSON.parse(JSON.stringify(resSizes));
+  const singlePants = await getSinglePants(params.id);
 
   return {
     props: {
-      item: pant,
-      sizes,
+      item: singlePants,
+      sizes: singlePants.sizes,
     },
   };
 }
