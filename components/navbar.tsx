@@ -16,7 +16,7 @@ const Navbar: React.FC = (): JSX.Element => {
         <Link href="/">
           <Image
             className={styles.logo}
-            src="/../public/images/logo.png"
+            src="https://i.postimg.cc/D0xq27VX/logo.png"
             width={64}
             height={64}
             alt="Logo"
