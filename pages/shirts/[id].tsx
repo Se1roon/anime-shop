@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/layout";
-import styles from "/styles/Cloth.module.css";
+import styles from "/styles/Clothes.module.css";
 import Image from "next/image";
 import getRating from "../../utils/getRating";
 import Head from "next/head";

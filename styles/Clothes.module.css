@@ -7,6 +7,7 @@
 
 .imgContainer {
   width: min(80%, 22rem);
+  height: auto;
 }
 
 .imgContainer img {
