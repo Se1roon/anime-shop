@@ -31,6 +31,7 @@ const Card: React.FC<CardProps> = ({
             height={135}
             alt="A hoodie"
             className={styles.img}
+            priority
           />
         </div>
 
