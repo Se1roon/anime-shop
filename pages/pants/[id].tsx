@@ -39,8 +39,9 @@ const Hoodie: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
           <Image
             src={`${item.path_to_image}`}
             width={550}
-            height={550}
-            alt="Hoodie image"
+            height={450}
+            alt="Pants image"
+            priority
           />
         </div>
         <div className={styles.content}>
