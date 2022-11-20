@@ -17,7 +17,10 @@ const Layout: React.FC<LayoutProps> = ({ children }): JSX.Element => {
           name="description"
           content="You anime shopping centre! Buy clothes from your favorite animes and mangas!"
         />
-        <meta property="og:image" content="/images/logo.png" />
+        <meta
+          property="og:image"
+          content="https://i.postimg.cc/L5bPZQdP/ogImg.jpg"
+        />
         <meta name="og:title" content="ZA WORUDO" />
       </Head>
       <Navbar />
