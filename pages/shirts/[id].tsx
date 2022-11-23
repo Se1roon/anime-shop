@@ -7,7 +7,21 @@ import Head from "next/head";
 import { Sizes } from "../../interfaces/Sizes";
 import getPaths from "../../utils/getPaths";
 import getShirt from "../../utils/getShirt";
-
+import {
+  Content,
+  ImgContainer,
+  L,
+  M,
+  Price,
+  Rating,
+  S,
+  Section,
+  SizesContainer,
+  StyledImage,
+  XL,
+  XS,
+  BuyBtn,
+} from "../../styles/clothes";
 interface HoodieProps {
   item: {
     id: string;
@@ -21,7 +35,7 @@ interface HoodieProps {
   sizes: Sizes;
 }
 
-const Hoodie: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
+const Shirts: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
   const sizeSelect = (e) => {
     const target = e.target;
 
@@ -33,49 +47,46 @@ const Hoodie: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
       <Head>
         <title>{item.name}</title>
       </Head>
-      <section className={styles.section}>
-        <div className={styles.imgContainer}>
-          <Image
+      <Section>
+        <ImgContainer>
+          <StyledImage
+            as={Image}
             src={`${item.path_to_image}`}
             width={550}
             height={450}
-            alt="Hoodie image"
+            alt="T-shirt image"
             priority
           />
-        </div>
-        <div className={styles.content}>
+        </ImgContainer>
+        <Content>
           <h2>{item.name}</h2>
-          <p className={styles.price}>{item.price}zł</p>
-          <div className={styles.rating}>
-            {item.rating ? getRating(item) : null}
-          </div>
-          <div className={styles.sizes}>
-            <div className={styles.xs} onClick={sizeSelect}>
+          <Price>{item.price}zł</Price>
+          <Rating>{item.rating ? getRating(item) : null}</Rating>
+          <SizesContainer>
+            <XS onClick={sizeSelect}>
               <h4>XS</h4>
               <p>{sizes.xs}</p>
-            </div>
-            <div className={styles.s} onClick={sizeSelect}>
+            </XS>
+            <S onClick={sizeSelect}>
               <h4>S</h4>
               <p>{sizes.s}</p>
-            </div>
-            <div className={styles.m} onClick={sizeSelect}>
+            </S>
+            <M onClick={sizeSelect}>
               <h4>M</h4>
               <p>{sizes.m}</p>
-            </div>
-            <div className={styles.l} onClick={sizeSelect}>
+            </M>
+            <L onClick={sizeSelect}>
               <h4>L</h4>
               <p>{sizes.l}</p>
-            </div>
-            <div className={styles.xl} onClick={sizeSelect}>
+            </L>
+            <XL onClick={sizeSelect}>
               <h4>XL</h4>
               <p>{sizes.xl}</p>
-            </div>
-          </div>
-          <div className={styles.button}>
-            <button className={styles.buy}>Buy</button>
-          </div>
-        </div>
-      </section>
+            </XL>
+          </SizesContainer>
+          <BuyBtn>Buy</BuyBtn>
+        </Content>
+      </Section>
     </Layout>
   );
 };
@@ -106,4 +117,4 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default Hoodie;
+export default Shirts;
