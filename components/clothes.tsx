@@ -2,6 +2,24 @@ import React, { useState } from "react";
 import Grid from "./grid";
 import styles from "./css/Clothes.module.css";
 import Filter from "./filter";
+import styled from "styled-components";
+
+// Styles
+
+const ClothesContainer = styled.section`
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: 1000px) {
+    flex-direction: row;
+  }
+`;
+
+// ====================================
 
 interface ClothesProps {
   records: {
@@ -37,7 +55,7 @@ const Clothes: React.FC<ClothesProps> = ({ records, linkTo }): JSX.Element => {
   };
 
   return (
-    <section className={styles.section}>
+    <ClothesContainer>
       <Filter
         maxPrice={maxPrice}
         minPrice={minPrice}
@@ -45,7 +63,7 @@ const Clothes: React.FC<ClothesProps> = ({ records, linkTo }): JSX.Element => {
         setMaxPrice={updateMaxPrice}
       />
       <Grid records={filterRecords()} linkTo={linkTo} />
-    </section>
+    </ClothesContainer>
   );
 };
 
