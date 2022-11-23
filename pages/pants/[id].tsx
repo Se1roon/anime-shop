@@ -5,7 +5,6 @@ import Image from "next/image";
 import getRating from "../../utils/getRating";
 import Head from "next/head";
 import { Sizes } from "../../interfaces/Sizes";
-import pocketbaseEs from "pocketbase";
 import getPaths from "../../utils/getPaths";
 import getSinglePants from "../../utils/getSinglePants";
 

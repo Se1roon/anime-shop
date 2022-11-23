@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Layout from "../../components/layout";
 import styles from "/styles/Clothes.module.css";
 import Image from "next/image";
 import getRating from "../../utils/getRating";
 import Head from "next/head";
 import { Sizes } from "../../interfaces/Sizes";
-import pocketbaseEs from "pocketbase";
 import getPaths from "../../utils/getPaths";
 import getHoodie from "../../utils/getHoodie";
 interface HoodieProps {

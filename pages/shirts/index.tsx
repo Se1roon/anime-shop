@@ -3,7 +3,6 @@ import React from "react";
 import Layout from "./../../components/layout";
 import Clothes from "../../components/clothes";
 import { HomeProps } from "../../interfaces/HomeProps";
-import pocketbaseEs from "pocketbase";
 import getShirts from "../../utils/getShirts";
 
 const Home: React.FC<HomeProps> = ({ records }): JSX.Element => {
