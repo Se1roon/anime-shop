@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children }): JSX.Element => {
   return (
     <Container>
       <Head>
-        <link rel="icon" href="/images/logo.png" />
+        <link rel="icon" href="https://i.postimg.cc/D0xq27VX/logo.png" />
         <meta
           name="description"
           content="You anime shopping centre! Buy clothes from your favorite animes and mangas!"
