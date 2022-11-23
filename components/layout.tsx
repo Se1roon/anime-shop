@@ -3,6 +3,18 @@ import React from "react";
 import styles from "./css/Layout.module.css";
 import Footer from "./footer";
 import Navbar from "./navbar";
+import styled from "styled-components";
+
+// Styles
+
+const Container = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+// ==================================
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,7 +22,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }): JSX.Element => {
   return (
-    <div className={styles.container}>
+    <Container>
       <Head>
         <link rel="icon" href="/images/logo.png" />
         <meta
@@ -26,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children }): JSX.Element => {
       <Navbar />
       {children}
       <Footer />
-    </div>
+    </Container>
   );
 };
 
