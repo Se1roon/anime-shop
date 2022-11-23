@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./css/Grid.module.css";
 import Link from "next/link";
 import getRating from "../utils/getRating";
 import styled from "styled-components";

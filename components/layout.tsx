@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React from "react";
-import styles from "./css/Layout.module.css";
 import Footer from "./footer";
 import Navbar from "./navbar";
 import styled from "styled-components";

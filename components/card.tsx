@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./css/Card.module.css";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -137,7 +136,6 @@ const Card: React.FC<CardProps> = ({
             width={140}
             height={135}
             alt="A hoodie"
-            className={styles.img}
             priority
           />
         </ImageContainer>

@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "./card";
-import styles from "./css/Showcase.module.css";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -9,9 +8,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Navigation } from "swiper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons";
 import getRating from "../utils/getRating";
 import Link from "next/link";
 import styled from "styled-components";
@@ -249,7 +245,6 @@ const Showcase: React.FC<ShowcaseProps> = ({
                 width={200}
                 height={200}
                 alt="Bestseller"
-                className={styles.img}
               />
               <NamePrice>
                 <NPHeader2>{item.name}</NPHeader2>

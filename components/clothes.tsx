@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Grid from "./grid";
-import styles from "./css/Clothes.module.css";
 import Filter from "./filter";
 import styled from "styled-components";
 
