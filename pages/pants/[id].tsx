@@ -1,6 +1,5 @@
 import React from "react";
 import Layout from "../../components/layout";
-import styles from "/styles/Clothes.module.css";
 import Image from "next/image";
 import getRating from "../../utils/getRating";
 import Head from "next/head";
@@ -40,7 +39,7 @@ const Pants: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
   const sizeSelect = (e) => {
     const target = e.target;
 
-    target.classList.toggle(`${styles.clicked}`);
+    target.classList.toggle(`clicked`);
   };
 
   return (
