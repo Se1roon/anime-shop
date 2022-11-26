@@ -1,0 +1,100 @@
+.container {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-light);
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 6px 2px var(--clr-accent);
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  background-color: var(--clr-accent);
+  width: 100%;
+  height: 45%;
+  border-radius: 20px 20px 0 0;
+  position: absolute;
+}
+
+.content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.imgContainer {
+  --bg: #7d2ae8;
+  --font-light-dark: #333;
+
+  background-color: var(--bg);
+  height: 140px;
+  aspect-ratio: 1;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 2px solid var(--bg-light);
+  border-radius: 50%;
+}
+
+.namePrice {
+  color: var(--bg-dark);
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.price {
+  font-size: 15px;
+}
+
+.rating {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.rating > * {
+  width: 18px;
+  aspect-ratio: 1;
+  color: var(--bg-dark);
+}
+
+.btns {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  --hover: hsl(100 10% 50%);
+
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: var(--bg-light);
+  background-color: var(--clr-accent);
+  padding: 8px 22px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--hover);
+}

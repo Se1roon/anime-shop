@@ -1,0 +1,103 @@
+.header {
+  --clr-dark: #000;
+
+  background-color: var(--bg-light);
+  width: 100%;
+  padding: 1rem 3rem;
+  box-shadow: 0 0 2rem 4px var(--clr-accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+.header li,
+.header a,
+.header button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--clr-dark);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 630px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.logo {
+  cursor: pointer;
+  width: 60px;
+  height: auto;
+}
+
+.menu {
+  display: none;
+}
+
+@media screen and (max-width: 630px) {
+  .menu {
+    cursor: pointer;
+    display: block;
+  }
+
+  .menu > * {
+    background-color: var(--clr-dark);
+    width: 2rem;
+    height: 2px;
+    margin-block: 8px;
+  }
+}
+
+.links {
+  list-style: none;
+  margin-right: 3rem;
+}
+
+.links li {
+  padding-inline: 1.4rem;
+  display: inline-block;
+}
+
+.links li a {
+  transition: all 0.3s ease;
+}
+
+.links li a:hover,
+.links li a:focus {
+  color: var(--clr-accent);
+}
+
+@media screen and (max-width: 630px) {
+  .links {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  background: var(--clr-accent);
+  padding: 0.8rem 1.8rem;
+  border: 0;
+  border-radius: 2em;
+  transition: all 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 0 0 10px 2px var(--clr-accent);
+}

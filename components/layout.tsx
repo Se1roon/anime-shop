@@ -1,19 +1,12 @@
-import Head from "next/head";
 import React from "react";
+
+// CSS
+import styles from "./css/Layout.module.css";
+
+// Components
+import Head from "next/head";
 import Footer from "./footer";
 import Navbar from "./navbar";
-import styled from "styled-components";
-
-// Styles
-
-const Container = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-// ==================================
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,7 +14,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }): JSX.Element => {
   return (
-    <Container>
+    <div className={styles.container}>
       <Head>
         <link rel="icon" href="https://i.postimg.cc/D0xq27VX/logo.png" />
         <meta
@@ -37,7 +30,7 @@ const Layout: React.FC<LayoutProps> = ({ children }): JSX.Element => {
       <Navbar />
       {children}
       <Footer />
-    </Container>
+    </div>
   );
 };
 
