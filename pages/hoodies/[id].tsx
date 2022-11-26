@@ -1,26 +1,17 @@
 import React from "react";
-import Layout from "../../components/layout";
-import Image from "next/image";
-import getRating from "../../utils/getRating";
-import Head from "next/head";
-import { Sizes } from "../../interfaces/Sizes";
 import getPaths from "../../utils/getPaths";
 import getHoodie from "../../utils/getHoodie";
-import {
-  Content,
-  ImgContainer,
-  L,
-  M,
-  Price,
-  Rating,
-  S,
-  Section,
-  SizesContainer,
-  StyledImage,
-  XL,
-  XS,
-  BuyBtn,
-} from "../../styles/clothes";
+import getRating from "../../utils/getRating";
+import { Sizes } from "../../interfaces/Sizes";
+
+// Styles
+import styles from "../../styles/Item.module.css";
+
+// Components
+import Image from "next/image";
+import Head from "next/head";
+import Layout from "../../components/layout";
+
 interface HoodieProps {
   item: {
     id: string;
@@ -38,7 +29,7 @@ const Hoodie: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
   const sizeSelect = (e) => {
     const target = e.target;
 
-    target.classList.toggle("clicked");
+    target.classList.toggle(styles.clicked);
   };
 
   return (
@@ -46,46 +37,48 @@ const Hoodie: React.FC<HoodieProps> = ({ item, sizes }): JSX.Element => {
       <Head>
         <title>{item.name}</title>
       </Head>
-      <Section>
-        <ImgContainer>
-          <StyledImage
-            as={Image}
+      <section className={styles.section}>
+        <div className={styles.imgContainer}>
+          <Image
+            className={styles.img}
             src={`${item.path_to_image}`}
             width={550}
             height={450}
             alt="Hoodie image"
             priority
           />
-        </ImgContainer>
-        <Content>
+        </div>
+        <div className={styles.content}>
           <h2>{item.name}</h2>
-          <Price>{item.price}zł</Price>
-          <Rating>{item.rating ? getRating(item) : null}</Rating>
-          <SizesContainer>
-            <XS onClick={sizeSelect}>
+          <p className={styles.price}>{item.price}zł</p>
+          <div className={styles.rating}>
+            {item.rating ? getRating(item) : null}
+          </div>
+          <div className={styles.sizes}>
+            <div className={styles.xs} onClick={sizeSelect}>
               <h4>XS</h4>
               <p>{sizes.xs}</p>
-            </XS>
-            <S onClick={sizeSelect}>
+            </div>
+            <div className={styles.s} onClick={sizeSelect}>
               <h4>S</h4>
               <p>{sizes.s}</p>
-            </S>
-            <M onClick={sizeSelect}>
+            </div>
+            <div className={styles.m} onClick={sizeSelect}>
               <h4>M</h4>
               <p>{sizes.m}</p>
-            </M>
-            <L onClick={sizeSelect}>
+            </div>
+            <div className={styles.l} onClick={sizeSelect}>
               <h4>L</h4>
               <p>{sizes.l}</p>
-            </L>
-            <XL onClick={sizeSelect}>
+            </div>
+            <div className={styles.xl} onClick={sizeSelect}>
               <h4>XL</h4>
               <p>{sizes.xl}</p>
-            </XL>
-          </SizesContainer>
-          <BuyBtn>Buy</BuyBtn>
-        </Content>
-      </Section>
+            </div>
+          </div>
+          <button className={styles.btn}>Buy</button>
+        </div>
+      </section>
     </Layout>
   );
 };
